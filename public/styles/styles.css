@@ -1,0 +1,33 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #e3f2fd;
+    text-align: center;
+    padding: 2.5008px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(19, 100, 128);
+    font-weight: 600;
+}
+
+.navbar-header p {
+    font-size: 24pt;
+    margin-left: 1.875rem;
+}
+
+.nav-options {
+    margin-right: 6.25rem;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.links {
+    text-decoration: none;
+}
