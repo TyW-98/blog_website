@@ -52,12 +52,12 @@ body {
 .blog-title, .blog-content {
     width: 100%;
     border-radius: .625rem;
+    padding: 10px;
 }
 
 .blog-content {
     height: 6.25rem;
     display: block;
-    border-radius: .9375rem;
 }
 
 .compose p {
