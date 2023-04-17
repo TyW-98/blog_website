@@ -9,7 +9,7 @@ body {
 .navbar {
     background-color: #e3f2fd;
     text-align: center;
-    padding: 2.5008px;
+    padding: .1563rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,15 +19,15 @@ body {
 
 .navbar-header p {
     font-size: 24pt;
-    margin-left: 1.875rem;
+    margin-left: 30px;
 }
 
 .nav-options {
-    margin-right: 6.25rem;
+    margin-right: 100px;
 }
 
 .nav-item {
-    margin: 0 15px;
+    margin: 0 .9375rem;
 }
 
 .links {
@@ -36,15 +36,22 @@ body {
 
 /* Main content section */
 
-.home-content {
+.home-content, .about-content, .contact-content {
     font-size: 16pt;
-    margin: 20px;
+    margin: 1.25rem;
+}
+
+
+/* Compose page section */
+
+.compose {
+    margin: .625rem 1.25rem;
 }
 
 /* Footer section */
 
-#footer {
+/* #footer {
     background-color: #e3f2fd;
     text-align: center;
-    padding: 10px 0;
-}
+    padding: .625rem 0;
+} */
