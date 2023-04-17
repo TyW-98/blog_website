@@ -1,24 +1,26 @@
 <%- include('partials/header') %>
 
-<div class="compose">
+<div class="compose form-group">
   <h2>Compose</h2>
   <form action="/compose" method="post" class="compose-form">
-    <p><strong>Title</strong></p>
+    <label for="blogTitle"><strong>Title: </strong></label>
     <input
       type="text"
       name="blogTitle"
-      placeholder="Enter your new blog"
+      placeholder=""
       autocomplete="off"
       class="blog-title"
+      id="blogTitle"
     />
-    <p><strong>Post</strong></p>
+    <label for="blogContent"><strong>Content: </strong></label>
     <textarea
       type="text"
       name="blogContent"
-      placeholder="Enter your new blog"
+      placeholder=""
       autocomplete="off"
       class="blog-content"
       rows="5"
+      id="blogContent"
     ></textarea>
     <button type="submit" name="postBtn" class="post-btn btn btn-primary">Publish</button>
   </form>

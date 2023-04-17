@@ -51,18 +51,13 @@ body {
 
 .blog-title, .blog-content {
     width: 100%;
-    border-radius: .625rem;
-    padding: 10px;
+    border-radius: .3125rem;
+    padding: .625rem;
 }
 
 .blog-content {
     height: 6.25rem;
     display: block;
-}
-
-.compose p {
-    height: max-content;
-    margin: 0 0 .0938rem;
 }
 
 .post-btn {
