@@ -1,11 +1,26 @@
 <%- include('partials/header') %>
 
 <div class="compose">
-    <h2>Compose</h2>
-    <form action="/" method="post" class="compose-form">
-        <input type="text" name="newBlog" placeholder="Enter your new blog" autocomplete="off" />
-        <button type="submit" name="postBtn">Publish</button>
-    </form>
+  <h2>Compose</h2>
+  <form action="/compose" method="post" class="compose-form">
+    <p><strong>Title</strong></p>
+    <input
+      type="text"
+      name="blogTitle"
+      placeholder="Enter your new blog"
+      autocomplete="off"
+      class="blog-title"
+    />
+    <p><strong>Post</strong></p>
+    <input
+      type="text"
+      name="blogContent"
+      placeholder="Enter your new blog"
+      autocomplete="off"
+      class="blog-content"
+    />
+    <button type="submit" name="postBtn" class="post-btn btn btn-primary">Publish</button>
+  </form>
 </div>
 
 <%- include('partials/footer') %>

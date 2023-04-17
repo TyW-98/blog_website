@@ -19,11 +19,11 @@ body {
 
 .navbar-header p {
     font-size: 24pt;
-    margin-left: 30px;
+    margin-left: 1.875rem;
 }
 
 .nav-options {
-    margin-right: 100px;
+    margin-right: 6.25rem;
 }
 
 .nav-item {
@@ -45,7 +45,28 @@ body {
 /* Compose page section */
 
 .compose {
-    margin: .625rem 1.25rem;
+    margin:.625rem auto 0;
+    width: 80%
+}
+
+.blog-title, .blog-content {
+    width: 100%;
+    border-radius: .625rem;
+}
+
+.blog-content {
+    height: 6.25rem;
+    display: block;
+    border-radius: .9375rem;
+}
+
+.compose p {
+    height: max-content;
+    margin: 0 0 .0938rem;
+}
+
+.post-btn {
+    margin-top: .9375rem;
 }
 
 /* Footer section */
@@ -53,5 +74,5 @@ body {
 /* #footer {
     background-color: #e3f2fd;
     text-align: center;
-    padding: .625rem 0;
+    padding: 10px 0;
 } */
