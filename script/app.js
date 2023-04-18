@@ -5,6 +5,7 @@ const https = require("https");
 const ejs = require("ejs");
 
 const app = express();
+const postList = []
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -18,7 +19,7 @@ const contactContent =
   "Thank you for visiting my website! If you have any questions, comments, or would like to collaborate on a project, please don't hesitate to reach out. I am always interested in connecting with like-minded individuals and exploring new opportunities. You can contact me directly through the form below, and I will get back to you as soon as possible. I look forward to hearing from you!";
 
 app.get("/", (req, res) => {
-  res.render("home", { homeStartingContent: homeStartingContent });
+  res.render("home", { homeStartingContent: homeStartingContent, postList: postList});
 });
 
 app.get("/about", (req, res) => {
@@ -30,18 +31,17 @@ app.get("/contact", (req, res) => {
 });
 
 app.get("/compose", (req, res) => {
-    res.render("compose", {
-    });
+  res.render("compose", {});
 });
 
 app.post("/compose", (req, res) => {
-    const newPost = {
-        postTitle: req.body.blogTitle,
-        postContent: req.body.blogContent
-    }
-
-    console.log(newPost)
-})
+  const newPost = {
+    postTitle: req.body.blogTitle,
+    postContent: req.body.blogContent,
+  };
+  res.redirect("/")
+  postList.push(newPost);
+});
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

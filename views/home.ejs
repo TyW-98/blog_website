@@ -2,6 +2,12 @@
 
 <div class="home-content">
     <p><%= homeStartingContent %></p>
+    <% if (postList.length >0) { %>
+        <% for (i=0; i < postList.length; i++) { %>
+            <h1 class="blog-title"><%= postList[i].postTitle %></h1>
+            <p class="blog-content"><%= postList[i].postContent %></p>
+        <% } %>
+     <% } %>
 </div>
 
 <%- include('partials/footer') %>
