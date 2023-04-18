@@ -35,7 +35,12 @@ app.get("/compose", (req, res) => {
 });
 
 app.post("/compose", (req, res) => {
-    console.log(req.body)
+    const newPost = {
+        postTitle: req.body.blogTitle,
+        postContent: req.body.blogContent
+    }
+
+    console.log(newPost)
 })
 
 app.listen(3000, () => {
