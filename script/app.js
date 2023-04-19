@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const https = require("https");
 const ejs = require("ejs");
+const _ = require("lodash");
 
 const app = express();
 let postList = [];
@@ -41,7 +42,7 @@ app.get("/post/:blogId", (req, res) => {
   let selectedPost = "";
 
   for (let i = 0; i < postList.length; i++) {
-    if (postList[i].postTitle === req.params.blogId) {
+    if (_.lowerCase(postList[i].postTitle) === _.lowerCase(req.params.blogId)) {
       selectedPost = postList[i];
       console.log("Found");
       break;
