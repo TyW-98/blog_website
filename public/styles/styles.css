@@ -1,16 +1,18 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: 'konit', sans-serif;
 }
+
+/* Navbar section */
 
 .navbar {
     background-color: #e3f2fd;
     text-align: center;
-    padding: 2.5008px;
+    padding: .1563rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Times New Roman', Times, serif;
     color: rgb(19, 100, 128);
     font-weight: 600;
 }
@@ -25,9 +27,69 @@ body {
 }
 
 .nav-item {
-    margin: 0 15px;
+    margin: 0 .9375rem;
 }
 
 .links {
     text-decoration: none;
 }
+
+.nav-item:hover {
+    animation: jumping 0.5s ease-in-out;
+    animation-fill-mode: both;
+}
+
+@keyframes jumping {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-2.5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Main content section */
+
+.home-content,
+.about-content,
+.contact-content {
+    font-size: 16pt;
+    margin: 1.25rem;
+}
+
+
+/* Compose page section */
+
+.compose {
+    margin: .625rem auto 0;
+    width: 80%
+}
+
+.post-btn {
+    margin-top: .9375rem;
+}
+
+.blog-content {
+    display: inline-block;
+}
+
+/* Footer section */
+
+/* #footer {
+    background-color: #e3f2fd;
+    text-align: center;
+    padding: 10px 0;
+} */

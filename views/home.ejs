@@ -1,1 +1,15 @@
-<%- include('header') %>
+<%- include('partials/header') %>
+
+<div class="home-content">
+    <p><%= homeStartingContent %></p>
+    <% if (postList.length >0) { %>
+        <% for (i=0; i < postList.length; i++) { %>
+            <h1 class="blog-title"><%= postList[i].postTitle %></h1>
+            <% const maxLength = 100 %>
+            <p class="blog-content"><%= postList[i].postContent.slice(0,maxLength) + (postList[i].postContent.length > maxLength ? "...":"")%></p>
+            <a href="/post/<%= postList[i].postTitle %>">(READ MORE)</a>
+        <% } %>
+     <% } %>
+</div>
+
+<%- include('partials/footer') %>
