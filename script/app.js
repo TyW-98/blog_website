@@ -5,7 +5,7 @@ const https = require("https");
 const ejs = require("ejs");
 
 const app = express();
-const postList = []
+let postList = [];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -19,7 +19,10 @@ const contactContent =
   "Thank you for visiting my website! If you have any questions, comments, or would like to collaborate on a project, please don't hesitate to reach out. I am always interested in connecting with like-minded individuals and exploring new opportunities. You can contact me directly through the form below, and I will get back to you as soon as possible. I look forward to hearing from you!";
 
 app.get("/", (req, res) => {
-  res.render("home", { homeStartingContent: homeStartingContent, postList: postList});
+  res.render("home", {
+    homeStartingContent: homeStartingContent,
+    postList: postList,
+  });
 });
 
 app.get("/about", (req, res) => {
@@ -34,12 +37,27 @@ app.get("/compose", (req, res) => {
   res.render("compose", {});
 });
 
+app.get("/post/:blogId", (req, res) => {
+  let selectedPost = "";
+
+  for (let i = 0; i < postList.length; i++) {
+    if (postList[i].postTitle === req.params.blogId) {
+      selectedPost = postList[i];
+      console.log("Found");
+      break;
+    } else {
+      console.log("Not found");
+    }
+  }
+  res.render("post", { selectedPost: selectedPost });
+});
+
 app.post("/compose", (req, res) => {
   const newPost = {
     postTitle: req.body.blogTitle,
     postContent: req.body.blogContent,
   };
-  res.redirect("/")
+  res.redirect("/");
   postList.push(newPost);
 });
 
