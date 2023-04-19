@@ -1,8 +1,8 @@
-<%- include('partials/header') %>
+<%- include('./partials/header') %>
 
-<div class="post-content">
-  <h1 class="blog-title"><%= selectedPost.postTitle %></h1>
-  <p class="blog-content"><%= selectedPost.postContent %></p>
+<div class="home-content">
+    <h1 class="blog-title"><%=selectedPost.postTitle %></h1>
+    <p class="blog-content"><%=selectedPost.postContent %></p>
 </div>
 
-<%- include('partials/footer') %>
+<%- include('./partials/footer') %>

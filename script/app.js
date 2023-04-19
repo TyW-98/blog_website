@@ -44,10 +44,8 @@ app.get("/post/:blogId", (req, res) => {
   for (let i = 0; i < postList.length; i++) {
     if (_.lowerCase(postList[i].postTitle) === _.lowerCase(req.params.blogId)) {
       selectedPost = postList[i];
-      console.log("Found");
       break;
     } else {
-      console.log("Not found");
     }
   }
   res.render("post", { selectedPost: selectedPost });
