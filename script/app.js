@@ -25,6 +25,10 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  createdBy: {
+    type: String,
+    required: true,
+  }
 });
 
 const Post = mongoose.model("Post", postSchema);
@@ -47,6 +51,7 @@ const startingInstructions = new Post({
   blogContent:
     'To use our blog website, simply navigate to the "Compose" route on the homepage. Here, you can create and write your blog post. Once you have finished, click on the "Publish" button to publish your blog post to the website for others to see. You can also browse and read other blog posts on the homepage by simply clicking on them. Happy blogging!',
   dateCreated: todaysDate,
+  createdBy: "Admin"
 });
 
 app.get("/", (req, res) => {
