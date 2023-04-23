@@ -18,9 +18,12 @@
   "homepage": "https://github.com/TyW-98/blog_website#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "date-and-time": "^3.0.0",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "lodash": "^4.17.21",
+    "mongoose": "^7.0.4",
     "path": "^0.12.7"
   }
 }
