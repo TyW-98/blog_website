@@ -49,7 +49,7 @@ const todaysDate = date.format(new Date(), "DD MMM YYYY (dddd)");
 const startingInstructions = new Post({
   title: "Instructions",
   blogContent:
-    'To use our blog website, simply navigate to the "Compose" route on the homepage. Here, you can create and write your blog post. Once you have finished, click on the "Publish" button to publish your blog post to the website for others to see. You can also browse and read other blog posts on the homepage by simply clicking on them. Happy blogging!',
+    'To use our blog website, simply navigate to the "Compose" route on the homepage. There, you can create and write your blog post. Once you have finished, click on the "Publish" button to publish your blog post to the website for others to see. You can also browse and read other blog posts on the homepage by simply clicking on them. Happy blogging!',
   dateCreated: todaysDate,
   createdBy: "Admin"
 });
@@ -80,13 +80,13 @@ app.get("/", (req, res) => {
 //   });
 // });
 
-// app.get("/about", (req, res) => {
-//   res.render("about", { aboutContent: aboutContent });
-// });
+app.get("/about", (req, res) => {
+  res.render("about", { aboutPageDefaultContent: aboutPageDefaultContent });
+});
 
-// app.get("/contact", (req, res) => {
-//   res.render("contact", { contactContent: contactContent });
-// });
+app.get("/contact", (req, res) => {
+  res.render("contact", { contactPageDefaultContent: contactPageDefaultContent });
+});
 
 // app.get("/compose", (req, res) => {
 //   res.render("compose", {});
