@@ -98,6 +98,9 @@ app.post("/compose", (req, res) => {
   res.redirect("/");
 });
 
+// *TODO: Fix individual post page below and make it clickable as well
+// *TODO: Add a dropdown menu for all posts
+
 // app.get("/post/:blogId", (req, res) => {
 //   let selectedPost = "";
 

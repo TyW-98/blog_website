@@ -70,6 +70,25 @@ body {
     margin: 1.25rem;
 }
 
+.blog {
+    border: solid 1px ;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.blog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-content {
+    display: inline-block;
+}
+
+.created-date {
+    font-size: 12pt;
+}
 
 /* Compose page section */
 
@@ -82,9 +101,6 @@ body {
     margin-top: .9375rem;
 }
 
-.blog-content {
-    display: inline-block;
-}
 
 /* Footer section */
 
