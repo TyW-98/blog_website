@@ -73,13 +73,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// app.get("/", (req, res) => {
-//   res.render("home", {
-//     homeStartingContent: homeStartingContent,
-//     postList: postList,
-//   });
-// });
-
 app.get("/about", (req, res) => {
   res.render("about", { aboutPageDefaultContent: aboutPageDefaultContent });
 });
@@ -88,9 +81,20 @@ app.get("/contact", (req, res) => {
   res.render("contact", { contactPageDefaultContent: contactPageDefaultContent });
 });
 
-// app.get("/compose", (req, res) => {
-//   res.render("compose", {});
-// });
+app.get("/compose", (req, res) => {
+  res.render("compose")
+});
+
+app.post("/compose", (req, res) => {
+  const newJournal = new Post({
+    title: req.body.blogTitle,
+    blogContent: req.body.blogContent,
+    dateCreated: todaysDate,
+    createdBy: req.body.authorsName
+
+  })
+})
+
 
 // app.get("/post/:blogId", (req, res) => {
 //   let selectedPost = "";
