@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const date = require("date-and-time");
 
-mongoose.connect("mongodb://127.0.0.1:27017/blog-journals")
+mongoose.connect("mongodb://127.0.0.1:27017/blog-journals");
 
 const app = express();
 
@@ -28,7 +28,7 @@ const postSchema = new mongoose.Schema({
   createdBy: {
     type: String,
     required: true,
-  }
+  },
 });
 
 const Post = mongoose.model("Post", postSchema);
@@ -51,7 +51,7 @@ const startingInstructions = new Post({
   blogContent:
     'To use our blog website, simply navigate to the "Compose" route on the homepage. There, you can create and write your blog post. Once you have finished, click on the "Publish" button to publish your blog post to the website for others to see. You can also browse and read other blog posts on the homepage by simply clicking on them. Happy blogging!',
   dateCreated: todaysDate,
-  createdBy: "Admin"
+  createdBy: "Admin",
 });
 
 app.get("/", (req, res) => {
@@ -78,11 +78,13 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-  res.render("contact", { contactPageDefaultContent: contactPageDefaultContent });
+  res.render("contact", {
+    contactPageDefaultContent: contactPageDefaultContent,
+  });
 });
 
 app.get("/compose", (req, res) => {
-  res.render("compose")
+  res.render("compose");
 });
 
 app.post("/compose", (req, res) => {
@@ -90,11 +92,11 @@ app.post("/compose", (req, res) => {
     title: req.body.blogTitle,
     blogContent: req.body.blogContent,
     dateCreated: todaysDate,
-    createdBy: req.body.authorsName
-
-  })
-})
-
+    createdBy: req.body.authorsName,
+  });
+  newJournal.save();
+  res.redirect("/");
+});
 
 // app.get("/post/:blogId", (req, res) => {
 //   let selectedPost = "";
