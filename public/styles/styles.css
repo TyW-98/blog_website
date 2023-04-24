@@ -45,7 +45,7 @@ body {
     }
 
     25% {
-        transform: translateY(-5px);
+        transform: translateY(-0.3125rem);
     }
 
     50% {
@@ -53,7 +53,7 @@ body {
     }
 
     75% {
-        transform: translateY(-2.5px);
+        transform: translateY(-0.1563rem);
     }
 
     100% {
@@ -67,19 +67,21 @@ body {
 .about-content,
 .contact-content {
     font-size: 16pt;
-    margin: 1.25rem;
+    margin: 20px;
 }
 
 .blog {
-    border: solid 1px ;
-    padding: 25px;
-    border-radius: 25px;
+    border: solid .0625rem ;
+    padding: 1.5625rem;
+    border-radius: 1.5625rem;
+    margin: .625rem 0;
 }
 
 .blog-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-decoration: underline;
 }
 
 .blog-content {
@@ -88,6 +90,7 @@ body {
 
 .created-date {
     font-size: 12pt;
+    text-decoration: underline;
 }
 
 /* Compose page section */
@@ -107,5 +110,5 @@ body {
 /* #footer {
     background-color: #e3f2fd;
     text-align: center;
-    padding: 10px 0;
+    padding: .625rem 0;
 } */
