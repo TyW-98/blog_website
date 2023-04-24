@@ -89,7 +89,7 @@ app.get("/compose", (req, res) => {
 
 app.post("/compose", (req, res) => {
   const newJournal = new Post({
-    title: req.body.blogTitle,
+    title: _.startCase(req.body.blogTitle),
     blogContent: req.body.blogContent,
     dateCreated: todaysDate,
     createdBy: req.body.authorsName,
@@ -97,6 +97,20 @@ app.post("/compose", (req, res) => {
   newJournal.save();
   res.redirect("/");
 });
+
+// *TODO: Fix individual post page below and make it clickable as well
+// *TODO: Add a dropdown menu for all posts
+
+app.get("/post/:blogId", (req, res) => {
+  if (req.params.blogId.toLowerCase() === "home") {
+    res.redirect("/");
+  } else {
+    Post.findOne({ title: _.startCase(req.params.blogId)}).then((selectedPost) => {
+      res.render("post", { selectedPost:selectedPost})
+      console.log(selectedPost)
+    })
+  }
+})
 
 // app.get("/post/:blogId", (req, res) => {
 //   let selectedPost = "";

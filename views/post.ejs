@@ -1,8 +1,12 @@
 <%- include('./partials/header') %>
 
 <div class="home-content">
-    <h1 class="blog-title"><%=selectedPost.postTitle %></h1>
-    <p class="blog-content"><%=selectedPost.postContent %></p>
+  <h1 class="blog-title">
+    <%= selectedPost.title %><span class="created-date"
+      ><%= selectedPost.dateCreated %></span
+    >
+  </h1>
+  <p class="blog-content"><%= selectedPost.blogContent %></p>
 </div>
 
 <%- include('./partials/footer') %>
