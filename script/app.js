@@ -94,45 +94,29 @@ app.post("/compose", (req, res) => {
     dateCreated: todaysDate,
     createdBy: req.body.authorsName,
   });
-  newJournal.save();
-  res.redirect("/");
+  newJournal.save().then(() => {
+    res.redirect("/")
+  })
 });
-
-// *TODO: Fix individual post page below and make it clickable as well
-// *TODO: Add a dropdown menu for all posts
 
 app.get("/post/:blogId", (req, res) => {
   if (req.params.blogId.toLowerCase() === "home") {
     res.redirect("/");
   } else {
-    Post.findOne({ title: _.startCase(req.params.blogId)}).then((selectedPost) => {
-      res.render("post", { selectedPost:selectedPost})
-      console.log(selectedPost)
-    })
+    Post.findOne({ _id: req.params.blogId }).then(
+      (selectedPost) => {
+        res.render("post", { selectedPost: selectedPost });
+        console.log(selectedPost);
+      }
+    );
   }
-})
+});
 
-// app.get("/post/:blogId", (req, res) => {
-//   let selectedPost = "";
-
-//   for (let i = 0; i < postList.length; i++) {
-//     if (_.lowerCase(postList[i].postTitle) === _.lowerCase(req.params.blogId)) {
-//       selectedPost = postList[i];
-//       break;
-//     } else {
-//     }
-//   }
-//   res.render("post", { selectedPost: selectedPost });
-// });
-
-// app.post("/compose", (req, res) => {
-//   const newPost = {
-//     postTitle: req.body.blogTitle,
-//     postContent: req.body.blogContent,
-//   };
-//   res.redirect("/");
-//   postList.push(newPost);
-// });
+app.get("/post", (req, res) => {
+  Post.find().then((postList) => {
+    res.render("postlist", { postList: postList });
+  });
+});
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

@@ -12,7 +12,7 @@
     <% const maxLength = 100 %>
     <!-- <p class="blog-content"><%= postList[i].blogContent.slice(0,maxLength) + (postList[i].blogContent.length > maxLength ? "...":"")%></p> -->
     <p class="blog-content"><%= postList[i].blogContent %></p>
-    <a href="/post/<%= postList[i].title %>">(READ MORE)</a>
+    <a href="/post/<%= postList[i]._id %>">(READ MORE)</a>
   </div>
   <% } %> <% } %>
 </div>
