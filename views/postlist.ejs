@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<div>
+    <ul class="post-list">
+        <% for (var i = 0; i < postList.length; i++) { %>
+        <li>
+            <a href="/posts"+ <%= postList[i].title %>><%= postList[i].title %></a>
+        </li>
+        <% } %>
+    </ul>
+
+</div>
+
+
+<%- include('partials/footer') %>
