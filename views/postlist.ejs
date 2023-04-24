@@ -4,7 +4,7 @@
     <ul class="post-list">
         <% for (var i = 0; i < postList.length; i++) { %>
         <li>
-            <a href="/post/<%= postList[i].title %>"><%= postList[i].title %></a>
+            <a href="/post/<%= postList[i]._id%>"><%= postList[i].title %></a>
         </li>
         <% } %>
     </ul>
